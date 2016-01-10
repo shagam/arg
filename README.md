@@ -9,7 +9,7 @@ README v0.0 / 01 JAN 2016
 ## Introduction
 
  <br />
-Simple to use, no need to define parameters
+Simple to use, no need to define parameters. The help info is collected while the program paqrses the command line parametrs
  <br />
 The parser supports 3 types of arguments
 * integer     example:   threads=8
@@ -24,16 +24,14 @@ The parser supports 3 types of arguments
 ## Usage
 
 calling sequence
-< br />
-java -jar overgead.jar   string_value=/vasr/js/java.log0   integerValue=1000  booleanValue
-< br />
-java -jar <programName>  <stringName>=<strngValue>    <integerName>=<nuericValue>   <booleanName>
+* java -jar overgead.jar   string_value=/vasr/js/java.log0   integerValue=1000  booleanValue
+* java -jar <programName>  <stringName>=<strngValue>    <integerName>=<nuericValue>   <booleanName>
 
 Argumets are seperated by spaces, no spaces between argument name and argument value
 
 java and c parsing is very much the same.
 
-No need to type the full arg_name, Argument prefix is enough as long as it is unique.
+No need to type the full arg_name, argument prefix is enough, as long as it is unique.
 (prefix of one argument only)
 
         // boolean argument
@@ -82,8 +80,8 @@ Argument help is created automatically
 
 ### Installation
 
-for java project:  copy Arg.java into your project
-for cpp project:   copy arg.cc and arg.h into your project
+* for java project:  copy Arg.java into your project
+* for c project:     copy arg.cc and arg.h into your project
 
 Copy Args.utest()  into main()  and adapt the code to your need.
 Follow the example and replace arguments name and description with your arguments.
