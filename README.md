@@ -9,7 +9,7 @@ README v0.0 / 01 JAN 2016
 ## Introduction
 
  <br />
-Simple to use, no need to define parameters. The help info is collected while the program parses the command line parametrs
+Simple to use, no need to define parameters. The help info is collected while the program parses the command line parametrs, and collects arguments valus.
  <br />
 The parser supports 3 types of arguments
 * integer     example:   threads=8
