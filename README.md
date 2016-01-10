@@ -25,7 +25,6 @@ The parser supports 3 types of arguments
 
 calling sequence
 * java -jar overgead.jar   string_value=/vasr/js/java.log0   integerValue=1000  booleanValue
-* java -jar <programName>  <stringName>=<strngValue>    <integerName>=<nuericValue>   <booleanName>
 
 Argumets are seperated by spaces, no spaces between argument name and argument value
 
@@ -72,14 +71,16 @@ Argument help is created automatically
 ## Contributing
 
 
-## Help              for help and bugs report, please email eli.shagam@gmail.com
+## Help
+for help and bugs report, please email eli.shagam@gmail.com
 
-## Installation      none
+## Installation
+none
 
-### Requirements     java or cpp project
+### Requirements
+java or cpp project
 
 ### Installation
-
 * for java project:  copy Arg.java into your project
 * for c project:     copy arg.cc and arg.h into your project
 
@@ -88,11 +89,15 @@ Follow the example and replace arguments name and description with your argument
 
 For c project add relevant files to your build (Makefie)
  
-### Configuration none
+### Configuration
+none
 
-## Credits     none
+## Credits
+none
 
-## Contact     for help and bugs report, please email eli.shagam@gmail.com
+## Contact
+for help and bugs report, please email eli.shagam@gmail.com
 
-## License     mit license 
+## License
+mit license 
 
