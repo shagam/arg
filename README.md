@@ -85,7 +85,7 @@ actual args:  [tree, thr=8, ]
 
 ### Installation
 
-for java prohect:  copy Arg.java into your project
+for java project:  copy Arg.java into your project
 for cpp project:   copy arg.cc and arg.h into your project
 
 Copy Args.utest()  into main()  and adapt the code to your need.
