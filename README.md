@@ -9,19 +9,24 @@ README v0.0 / 01 JAN 2016
 ## Introduction
 
 java and c++  line argumet parsers  Args.java  and args.cc args.h
+ <br />
 Simple to use, no need to define parameters
-
+ <br />
 The parser supports 3 types of arguments
-
+ <br />
 integer     example:   threads=8
+
 string      example:   file=/proc/cpuinfo
+
 boolean     example:   verbose
 
 
 ## Usage
 
 calling sequence
+ <br />
 java -jar overgead.jar   string_value=/vasr/js/java.log0   integerValue=1000  booleanValue
+ <br />
 java -jar <programName>  <stringName>=<strngValue>    <integerName>=<nuericValue>   <booleanName>
 
 Argumets are seperated by spaces, no spaces between argument name and argument value
@@ -55,23 +60,15 @@ No need to type the full arg_name, Argument prefix is  enogh as long as it is un
 
 
 Argument help is created automatically
-eli@l0:/$ java -jar ~/nb/overhead/dist/overhead.jar   tree  threa=8
-optional args:   
-threads=integer             number of concurrent threads
-arrays=integer              number of arrays, accessed by threads
-size=integer                size of each array/tree
-printFilter=integer          print filter (fraction of loops that print)
-tree(bool)                  test==tree
-alloc(bool)                 test==alloc
-noLock(bool)                tree no lock (Each thread has private array)
-queue(bool)                 test==queue
-hash(bool)                  test==hash
-copy(bool)                  test==copy_memory (measure bandwidth)
-prime(bool)                 test==prime
-loops(bool)                 test==loops
-verbose(bool)               print test param during run
+<br />$java -jar ~/nb/overhead/dist/overhead.jar   tree  threa=8
+<br />optional args:
+<br />threads=<integer>           number of concurrent threads
+<br />arrays=<integer>            number of arrays, accessed by threads
+<br />tree(bool)                  test==tree
+<br />alloc(bool)                 test==alloc
+<br />verbose(bool)               print test param during run
 
-actual args:  [tree, thr=8, ]
+<br />actual args:  [tree, thr=8, ]
 
 
 ## Contributing
