@@ -8,32 +8,32 @@ README v0.0 / 01 JAN 2016
 
 ## Introduction
 
-java and c++  line argumet parsers  Args.java  and args.cc args.h
  <br />
 Simple to use, no need to define parameters
  <br />
 The parser supports 3 types of arguments
- <br />
-integer     example:   threads=8
+* integer     example:   threads=8
+* string      example:   file=/proc/cpuinfo
+* boolean     example:   verbose
 
-string      example:   file=/proc/cpuinfo
-
-boolean     example:   verbose
+## files
+* Args.java  for java
+* args.cc args.h  for c
 
 
 ## Usage
 
 calling sequence
- <br />
+< br />
 java -jar overgead.jar   string_value=/vasr/js/java.log0   integerValue=1000  booleanValue
- <br />
+< br />
 java -jar <programName>  <stringName>=<strngValue>    <integerName>=<nuericValue>   <booleanName>
 
 Argumets are seperated by spaces, no spaces between argument name and argument value
 
 java and c parsing is very much the same.
 
-No need to type the full arg_name, Argument prefix is  enogh as long as it is unique.
+No need to type the full arg_name, Argument prefix is enough as long as it is unique.
 (prefix of one argument only)
 
         // boolean argument
@@ -61,12 +61,12 @@ No need to type the full arg_name, Argument prefix is  enogh as long as it is un
 
 Argument help is created automatically
 <br />$java -jar ~/nb/overhead/dist/overhead.jar   tree  threa=8
-<br />optional args:
-<br />threads=<integer>           number of concurrent threads
-<br />arrays=<integer>            number of arrays, accessed by threads
-<br />tree(bool)                  test==tree
-<br />alloc(bool)                 test==alloc
-<br />verbose(bool)               print test param during run
+* optional args:
+* threads=<integer>           number of concurrent threads
+* arrays=<integer>            number of arrays, accessed by threads
+* tree(bool)                  test==tree
+* alloc(bool)                 test==alloc
+* verbose(bool)               print test param during run
 
 <br />actual args:  [tree, thr=8, ]
 
