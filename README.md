@@ -1,5 +1,5 @@
 # arg
-Command line argumet parser for java and cpp applications
+Command line argument parser for java and cpp applications
 
 
 README v0.0 / 01 JAN 2016
