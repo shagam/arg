@@ -1,5 +1,5 @@
 # arg
-Argumet parser for java and cpp applications
+Command line argumet parser for java and cpp applications
 
 
 README v0.0 / 01 JAN 2016
@@ -28,7 +28,7 @@ Argumets are seperated by spaces, no spaces between argument name and argument v
 
 java and c parsing is very much the same.
 
-The user does not need to type the full arg_name, Argument prefix is  enogh as long as it is unique.
+No need to type the full arg_name, Argument prefix is  enogh as long as it is unique.
 (prefix of one argument only)
 
         // boolean argument
@@ -42,14 +42,12 @@ The user does not need to type the full arg_name, Argument prefix is  enogh as l
 
 
         // integer argument 
-        int threadCount = -1;
-        //Args.search_int_value("thredd", args, "number of concurrent threads");        
+        int threadCount;
         int threads = Args.search_int_value("threds", args, "number of concurrent threads");
         if (threads != Integer.MAX_VALUE)
             threadCount = threads;
         else
             threadCount = Runtime.getRuntime().availableProcessors();
-        assert threadCount == 7;
 
 
         // print help and sanity check 
@@ -90,10 +88,10 @@ actual args:  [tree, thr=8, ]
 for java prohect:  copy Arg.java into your project
 for cpp project:   copy arg.cc and arg.h into your project
 
-Copy Arg.utest()  into main()  and adapt the code to your need.
- Follow the example and replace arguments name and description with your arguments
+Copy Args.utest()  into main()  and adapt the code to your need.
+Follow the example and replace arguments name and description with your arguments.
 
-For cpp add relevant files rto your build
+For c project add relevant files to your build (Makefie)
  
 ### Configuration none
 
