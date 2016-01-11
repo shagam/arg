@@ -36,15 +36,15 @@ No need to type the full arg_name, argument prefix is enough, as long as it is u
 (prefix of one argument only)
 
         // boolean argument
-        boolean copy = Args.bool_exist ("copy", args, "test==copy_memory (measure bandwidth)");
+        boolean copy = Args.getBool ("copy", args, "test==copy_memory (measure bandwidth)");
 
         // string argument
-        String file = Args.search_String_arg ("file", args, "file name");
+        String file = Args.getString ("file", args, "file name");
 
 
         // integer argument 
         int threadCount;
-        int threads = Args.search_int_value("threads", args, "number of concurrent threads");
+        int threads = Args.getInteger ("threads", args, "number of concurrent threads");
         if (threads != Integer.MAX_VALUE)
             threadCount = threads;
         else

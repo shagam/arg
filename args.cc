@@ -77,7 +77,7 @@ int isNumeric (char* str) {
     return 1;
 }
 
-int bool_exist (char const * name, int argc, const char * const argv[], char const * description) {
+int getBool (char const * name, int argc, const char * const argv[], char const * description) {
 //        if (s_args == null)
 //            s_args = args;
     param_map.insert(std::pair<string,string>(name,BOOL));
@@ -112,7 +112,7 @@ int split (char const * name_value, char * name, char * value) {
     
 }
 
-int search_String_arg (char const * param_name, int argc, const char * const argv[], char * res_value, char const * description) {
+int getString (char const * param_name, int argc, const char * const argv[], char * res_value, char const * description) {
     param_map.insert(std::pair<string,string>(param_name,STRING));
     description_map.insert(std::pair<string,string>(param_name,description));     
     for (int n = 0; n < argc; n++) {
@@ -140,10 +140,10 @@ int search_String_arg (char const * param_name, int argc, const char * const arg
     return 0;
 }
 
-int search_int_value (char const * param_name, int argc, const char * const argv[], char const * description) {
+int getInteger (char const * param_name, int argc, const char * const argv[], char const * description) {
     
     char res_value [SIZ] = {0};
-    int res = search_String_arg (param_name, argc, argv, res_value, description);
+    int res = getString (param_name, argc, argv, res_value, description);
     param_map.erase (param_name);
     param_map.insert (std::pair<string,string>(param_name,INT));
     description_map.erase (param_name);
@@ -220,12 +220,12 @@ void utest () {
     char str_result [SIZ] = {0};
 
     int argc = 1;
-    res = search_String_arg ("ppppp", sizeof(argv), argv, str_result, "");
+    res = getString ("ppppp", sizeof(argv), argv, str_result, "");
     fprintf (stderr, "\nvalue_str=%s   stat=%d\n", str_result, res);
-    res = search_int_value ("ppppp", sizeof(argv), argv,"");
+    res = getInteger ("ppppp", sizeof(argv), argv,"");
     fprintf (stderr, "\nvalue_int=%d\n", res);
 
-    if (bool_exist ("nolock", sizeof(argv), argv,""))
+    if (getBool ("nolock", sizeof(argv), argv,""))
         fprintf (stderr, "\nnolock__\n");        
 }
 

@@ -70,9 +70,10 @@ public class Args {
         s_err = null;
         s_args = null;
     }
+
     
     // search one formalParam in actual args
-    public static String search_String_arg (String name, String [] args, String description) {
+    public static String getString (String name, String [] args, String description) {
         if (s_args == null)
             s_args = args;
         String param = extractParam (name);        
@@ -95,8 +96,8 @@ public class Args {
         return null;
     }
       
-    public static int search_int_value (String name, String [] args, String description) {
-        String strValue = search_String_arg (name, args, description);
+    public static int getInteger (String name, String [] args, String description) {
+        String strValue = getString (name, args, description);
         s_argType.remove(s_argType.size() - 1);
         s_argType.add (ArgType.integer.toString());
         s_descriptionMap.put (name, description);
@@ -115,7 +116,7 @@ public class Args {
         }
     }
 
-    public static boolean bool_exist (String name, String [] args, String description) {
+    public static boolean getBool (String name, String [] args, String description) {
         if (s_args == null)
             s_args = args;
 
@@ -131,6 +132,8 @@ public class Args {
         }
         return false;
     }
+    
+    
     
     static void checkDuplicatesAndAddToList (String name) {
         String param = extractParam (name);
@@ -256,14 +259,14 @@ public class Args {
     public static void utest () {
         String [] args = {"th=7", "copy", "file=/var/js/blabla"};
 
-        boolean copy = Args.bool_exist ("copy", args, "test==copy_memory (measure bandwidth)");
+        boolean copy = Args.getBool ("copy", args, "test==copy_memory (measure bandwidth)");
         assert copy;
-        String file = Args.search_String_arg ("file", args, "file name");
+        String file = Args.getString ("file", args, "file name");
         assert file != null;
         
         int threadCount = -1;
         //Args.search_int_value("thredd", args, "number of concurrent threads");        
-        int threads = Args.search_int_value("threds", args, "number of concurrent threads");
+        int threads = Args.getInteger("threds", args, "number of concurrent threads");
         if (threads != Integer.MAX_VALUE)
             threadCount = threads;
         else
