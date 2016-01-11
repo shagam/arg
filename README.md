@@ -1,5 +1,5 @@
 # arg
-Command line argument parser for java and c/c++ applications
+Command line argument (cli) parser for java and c/c++ applications
 
 
 README v0.0 / 01 JAN 2016
@@ -9,7 +9,9 @@ README v0.0 / 01 JAN 2016
 ## Introduction
 
  <br />
-Simple to use, no need to define parameters. The help info is collected while the program parses the command line parametrs, and collects arguments valus.
+Simple to use, no need to define parameters.
+ <br />
+The help info is collected while the program parses the command line parametrs, and collects arguments valus.
  <br />
 The parser supports 3 types of arguments
 * integer     example:   threads=8
@@ -42,7 +44,7 @@ No need to type the full arg_name, argument prefix is enough, as long as it is u
 
         // integer argument 
         int threadCount;
-        int threads = Args.search_int_value("threds", args, "number of concurrent threads");
+        int threads = Args.search_int_value("threads", args, "number of concurrent threads");
         if (threads != Integer.MAX_VALUE)
             threadCount = threads;
         else
