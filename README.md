@@ -1,5 +1,5 @@
 # arg
-Command line argument parser for java and cpp applications
+Command line argument parser for java and c applications
 
 
 README v0.0 / 01 JAN 2016
@@ -35,12 +35,9 @@ No need to type the full arg_name, argument prefix is enough, as long as it is u
 
         // boolean argument
         boolean copy = Args.bool_exist ("copy", args, "test==copy_memory (measure bandwidth)");
-        assert copy;
-
 
         // string argument
         String file = Args.search_String_arg ("file", args, "file name");
-        assert file != null;
 
 
         // integer argument 
