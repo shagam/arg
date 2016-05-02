@@ -28,4 +28,10 @@ extern int split (char const * name_value, char * name, char * value);
 
 extern void args_report ();
 
+extern const char * verify (int argc, const char * const argv[]);
+
 int getCPUCount();
+
+int formatInt (char* str, long n);
+
+void formatIntUtest (void);
