@@ -25,6 +25,7 @@ The parser supports 3 types of arguments
 
 ## Usage
 
+See usage example in Args.java.utest()    args.c.utest()
 calling sequence
 * java -jar overgead.jar   string_value=/vasr/js/java.log0   integerValue=1000  booleanValue
 
