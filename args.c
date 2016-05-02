@@ -119,7 +119,7 @@ int split (char const * name_value, char * name, char * value) {
 int getString (char const * param_name, int argc, const char * const argv[], char * res_value, char const * description) {
     param_map.insert(std::pair<string,string>(param_name,STRING));
     description_map.insert(std::pair<string,string>(param_name,description));     
-    for (int n = 1; n < argc; n++) {
+    for (int n = 0; n < argc; n++) {
         if (isContain (argv[n], '=')) {
             char name [STR_MAX] = {0};
             char value [STR_MAX] = {0};    
@@ -275,8 +275,39 @@ const char * verify (int argc, const char * const argv[]) {
 }
 
 void utest () {
+       
+    static const char *const argv[] = {"testName=alloc","delay=4", "help"};
+    static const int argc = 3;
+    char str_result [STR_MAX] = {0};
+
+    // get string param
+    int status = getString ("testName", argc, argv, str_result, "description: type of test");
+    if (status == 0) { // means param testName is missing 
+        
+    }
+
+    // get int param
+    int delay = getInteger ("delay", argc, argv,"description: duration f test");
+    if (delay == -1) {  //-1  means delay arg missing
+       
+    }
     
-    int res = isContain ("aaa=bbbb", '=');
+    // get boolean param 0/1
+    int help = getBool ("help", argc, argv,"description: print optional params");
+    if (help)
+        args_report(); // if help exist print all allowed arguments;  arg_report after all args collected
+    
+    // verify no bogus arguments
+    const char * err = verify (argc, argv);
+    if (err != NULL) {
+        fprintf (stderr, "invalid param=%s  \n", err);
+        exit (3);
+    }
+}
+
+// test for sub routines
+int utest_sub () {
+   int res = isContain ("aaa=bbbb", '=');
 //    if (res)
 //        fprintf (stderr, "contain\n");
     
@@ -301,18 +332,7 @@ void utest () {
     
     static const char *const days[] = { "mon", "tue", "wed", "thur",
                                        "fri", "sat", "sun" };
-      
-    static const char *const argv[] = {"nolock","pppp=4","cccc=8","param=123"};
-    char str_result [STR_MAX] = {0};
-
-    int argc = 1;
-    res = getString ("ppppp", sizeof(argv), argv, str_result, "");
-    fprintf (stderr, "\nvalue_str=%s   stat=%d\n", str_result, res);
-    res = getInteger ("ppppp", sizeof(argv), argv,"");
-    fprintf (stderr, "\nvalue_int=%d\n", res);
-
-    if (getBool ("nolock", sizeof(argv), argv,""))
-        fprintf (stderr, "\nnolock__\n");        
+    
 }
 
 
